@@ -1,3 +1,8 @@
+import os
+import pandas as pd
+from PIL import Image
+from torch.utils.data import Dataset
+
 # Changes to names of the jpegs.
 
 # To be ran multiple times for different test,train,valid folders
@@ -69,29 +74,5 @@ class CustomDataset(Dataset):
             image = self.transform(image)
         return image, label
 
-# Define transformations
-transform = transforms.Compose([
-    transforms.Resize((416, 416)), 
-    transforms.ToTensor(),          
-#     transforms.Normalize(mean=[0.2], std=[0.2]),  # Normalizations
-])
-
-# Load dataset
-artist_train_dataset = CustomDataset('/Users/sarthakkapila/Desktop/wikiart_csv/artist_train_modified_final.csv', transform=transform)
-style_train_dataset = CustomDataset('/Users/sarthakkapila/Desktop/wikiart_csv/style_train_modified_final.csv', transform=transform)
-genre_train_dataset = CustomDataset('/Users/sarthakkapila/Desktop/wikiart_csv/genre_train_modified_final.csv', transform=transform)
-
-artist_val_dataset = CustomDataset('/Users/sarthakkapila/Desktop/wikiart_csv/artist_val_modified_final.csv', transform=transform)
-style_val_dataset = CustomDataset('/Users/sarthakkapila/Desktop/wikiart_csv/style_val_modified_final.csv', transform=transform)
-genre_val_dataset = CustomDataset('/Users/sarthakkapila/Desktop/wikiart_csv/genre_val_modified_final.csv', transform=transform)
-
-
-# Define DataLoader
-artist_train_dataloader = DataLoader(artist_train_dataset, batch_size=32, shuffle=True)
-style_train_dataloader = DataLoader(style_train_dataset, batch_size=32, shuffle=True)
-genre_train_dataloader = DataLoader(genre_train_dataset, batch_size=32, shuffle=True)
-
-
-artist_val_dataloader = DataLoader(artist_val_dataset, batch_size=32, shuffle=True)
-style_val_dataloader = DataLoader(style_val_dataset, batch_size=32, shuffle=True)
-genre_val_dataloader = DataLoader(genre_val_dataset, batch_size=32, shuffle=True)
+# EVERYTHING HERE WAS DONE IN THE JUPYTER NOTEBOOK.
+# JUST COPIED THE CODE HERE DIDN'T ANY OF IT HERE.
