@@ -1,3 +1,5 @@
+import torch
+
 def evaluate_model(model, test_loader):
     model.eval()
     correct = 0
@@ -12,4 +14,3 @@ def evaluate_model(model, test_loader):
 
     accuracy = 100 * correct / total
     return accuracy
-
