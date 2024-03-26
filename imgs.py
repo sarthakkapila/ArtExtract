@@ -25,7 +25,3 @@ print(imshow(images[0]));
 
 images, labels = next(iter(genre_train_dataloader))     # Genre DataLoader
 print(imshow(images[0]));
-
-
-
-
