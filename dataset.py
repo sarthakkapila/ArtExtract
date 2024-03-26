@@ -74,5 +74,6 @@ class CustomDataset(Dataset):
             image = self.transform(image)
         return image, label
 
+# 🚨
 # EVERYTHING HERE WAS DONE IN THE JUPYTER NOTEBOOK.
-# JUST COPIED THE CODE DIDN'T ANY OF IT HERE.
+# JUST COPIED THE CODE DIDN'T RUN ANY OF IT HERE.
