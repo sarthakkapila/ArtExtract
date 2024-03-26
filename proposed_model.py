@@ -1,3 +1,8 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torchvision.models as models
+
 # 🚨
 
 # This is my actual proposed model but due to hardware and time limitations and complexity of model I unfotunately 
