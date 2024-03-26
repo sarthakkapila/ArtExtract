@@ -7,6 +7,9 @@ from model import ConvRNNModel
 from dataset import CustomDataset
 from train import train_model
 from eval import evaluate_model
+import os
+import pandas as pd
+from PIL import Image
 
 # Constants
 num_artist_classes = 23
@@ -60,6 +63,9 @@ models = {
 # print("-------STYLE-------", style_model)
 # print("-------GENRE-------", genre_model)
 
+for task, model in models.items():
+    print(f"-------{task.capitalize()}-------\n{model}")
+
 # Create optimizers and loss functions
 optimizers = {task: optim.Adam(model.parameters(), lr=learning_rate) for task, model in models.items()}
 criterions = {task: nn.CrossEntropyLoss() for task in models}
@@ -67,6 +73,10 @@ criterions = {task: nn.CrossEntropyLoss() for task in models}
 # Train models
 for task in models:
     train_model(models[task], train_loaders[task], val_loaders[task], criterions[task], optimizers[task], num_epochs)
+    
+    # SAve model
+    torch.save(models[task].state_dict(), os.path.join(save_dir, f'{task}_model.pth'))
+
 
 # Evaluate models
 for task in models:
