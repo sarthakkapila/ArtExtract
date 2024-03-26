@@ -10,6 +10,8 @@ from eval import evaluate_model
 import os
 import pandas as pd
 from PIL import Image
+from torch.utils.data import Dataset
+from eval import evaluate_model
 
 # Constants
 num_artist_classes = 23
@@ -74,11 +76,13 @@ criterions = {task: nn.CrossEntropyLoss() for task in models}
 for task in models:
     train_model(models[task], train_loaders[task], val_loaders[task], criterions[task], optimizers[task], num_epochs)
     
-    # SAve model
+    save_dir = '/Users/sarthakkapila/Desktop/123art/models'
+    # SAve the models!
     torch.save(models[task].state_dict(), os.path.join(save_dir, f'{task}_model.pth'))
 
 
-# Evaluate models
+# Evaluating the models
 for task in models:
     accuracy = evaluate_model(models[task], val_loaders[task])
     print(f'{task.capitalize()} Model Accuracy: {accuracy:.2f}%')
+    
