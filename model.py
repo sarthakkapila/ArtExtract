@@ -4,10 +4,10 @@ from torchvision import models
 from torchvision.models import resnet18
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print(device)
+# print(device)
 
 resnet = resnet18(pretrained=True)
-print(resnet)
+# print(resnet)
 
 class ConvRNNModel(nn.Module):
     def __init__(self, num_classes):
