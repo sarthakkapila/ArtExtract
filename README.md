@@ -19,8 +19,6 @@ So, I decided to use a more tonend down version of the same Wiki Art dataset,
 
 Specifications of dataset :-
 
-wiki art - v2 
-==============================
 This dataset was exported via roboflow.ai on March 9, 2022 at 5:30 PM GMT
 
 It includes 15274 images.
@@ -46,7 +44,8 @@ Thank you.
 
 ## About 
 SARTHAK KAPILA
-Emai :- sarthakkapila1@gmail.com
+
+Email :- sarthakkapila1@gmail.com
 
 ## License
 
