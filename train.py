@@ -47,3 +47,4 @@ def train_model(model, train_loader, valid_loader, criterion, optimizer, num_epo
               f'Val Loss: {val_loss:.4f}, Val Accuracy: {val_accuracy:.2f}%')
 
     print('Training finished')
+    
